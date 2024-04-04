@@ -10,6 +10,15 @@
 body {
   font-family: 'Lato', sans-serif;
 }
+.dot-mouse-pointer {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 9999;
+  pointer-events: none;
+}
 
 header {
   background-color: #0e100c;
