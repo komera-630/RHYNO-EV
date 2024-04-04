@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhyno EV Payment</title>
     <link rel="stylesheet" type="text/css" href="payment.css">
+    <script src="https://assets.phonepe.com/phonepeLibrary/js/phonepe-checkout.js"></script>
 </head>
 <body>
     <h1>Checkout</h1>
@@ -28,5 +29,18 @@
         // Add an instance of the card Element into the `card-element` div
         card.mount('#card-element');
     </script>
+    <script>
+        var phonePe = new PhonePeCheckout({
+  clientId: 'YOUR_PHONEPE_CLIENT_ID',
+  orderId: 'YOUR_ORDER_ID',
+  amount: '10.00', // Set the amount here
+  orderCurrency: 'INR',
+  returnUrl: 'URL_TO_RETURN_AFTER_PAYMENT',
+  paymentModes: ['UPI', 'WALLET', 'CC', 'DC', 'NET_BANKING'],
+  orderDescription: 'Description of your order'
+});
+        phonePe.initiatePayment();
+    </script>
+    
 </body>
 </html>
