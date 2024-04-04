@@ -15,6 +15,7 @@
   
 </head>
 <body>
+    <div class="dot-mouse-pointer"></div>
   <header>
     <div >
     <img src="log .png" id="logo">
@@ -249,5 +250,12 @@
        setInterval(changeHeaderBackground, 5000); 
      });
    </script>
+  <script>
+  document.addEventListener('mousemove', function(e) {
+  var dot = document.querySelector('.dot-mouse-pointer');
+  dot.style.top = e.pageY + 'px';
+  dot.style.left = e.pageX + 'px';
+});
+  </script>
 </body>
 </html>
