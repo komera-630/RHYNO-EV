@@ -41,9 +41,8 @@ button[type="submit"]:hover {
 </head>
 <body>
     <form id="payment-form">
-        <!-- Your payment form fields here -->
         <input type="text" id="card-holder-name" placeholder="Card Holder Name">
-        <div id="card-element"><!-- Stripe.js injects the Card Element --></div>
+        <div id="card-element"></div>
         <button type="submit">Submit Payment</button>
     </form>
 
@@ -62,10 +61,8 @@ button[type="submit"]:hover {
 
             stripe.createToken(cardElement).then(function(result) {
                 if (result.error) {
-                    // Inform the user if there was an error
                     console.error(result.error.message);
                 } else {
-                    // Send the token to your server
                     fetch('/process-payment.php', {
                         method: 'POST',
                         headers: {
@@ -73,15 +70,14 @@ button[type="submit"]:hover {
                         },
                         body: JSON.stringify({
                             stripeToken: result.token.id,
-                            amount: 1000, // Amount in cents
+                            amount: 1000, 
                             currency: 'usd'
                         })
                     }).then(function(response) {
                         if (response.ok) {
-                            // Payment successful, redirect to success page
+                            
                             window.location.href = 'success.html';
                         } else {
-                            // Payment failed, redirect to error page
                             window.location.href = 'error.html';
                         }
                     });
