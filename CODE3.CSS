@@ -1,12 +1,7 @@
 
-  /* Reset styles */
 * {
-
-
   box-sizing: border-box;
 }
-
-/* Basic styling */
 body {
   font-family: 'Lato', sans-serif;
 }
@@ -257,10 +252,5 @@ footer ul li {
 
 .green {
   background-color: green;
-}
-
-/* Style for selected radio button */
-input[type="radio"]:checked + label {
-  border: 2px solid #000;
 }
 
