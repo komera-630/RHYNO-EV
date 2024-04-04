@@ -9,31 +9,30 @@
 </head>
 <body>
     <h1>Checkout</h1>
-    <!-- Your checkout form -->
+   
     <form action="payform.html" method="post">
         <label for="card_number">Card Number</label>
         <input type="text" id="card_number" name="card_number" required>
-        <!-- Other payment fields -->
+      
+<div id="phonepe-button-container"></div>
+
         <button type="submit">Pay Now</button>
     </form>
     
-    <!-- Include the JavaScript SDK for your chosen payment gateway -->
+ 
     <script src="https://js.stripe.com/v3/"></script>
     <script>
-        // Your JavaScript code to initialize and handle the payment process
-        // Example for Stripe
+       
         var stripe = Stripe('your_stripe_public_key');
         var elements = stripe.elements();
-        // Create an instance of the card Element
         var card = elements.create('card');
-        // Add an instance of the card Element into the `card-element` div
-        card.mount('#card-element');
+        card.mount('#card-element ');
     </script>
     <script>
         var phonePe = new PhonePeCheckout({
   clientId: 'YOUR_PHONEPE_CLIENT_ID',
   orderId: 'YOUR_ORDER_ID',
-  amount: '10.00', // Set the amount here
+  amount: '1000', 
   orderCurrency: 'INR',
   returnUrl: 'URL_TO_RETURN_AFTER_PAYMENT',
   paymentModes: ['UPI', 'WALLET', 'CC', 'DC', 'NET_BANKING'],
