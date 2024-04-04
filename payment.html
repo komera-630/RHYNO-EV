@@ -5,41 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhyno EV Payment</title>
     <link rel="stylesheet" type="text/css" href="payment.css">
-    <script src="https://assets.phonepe.com/phonepeLibrary/js/phonepe-checkout.js"></script>
 </head>
 <body>
     <h1>Checkout</h1>
-   
     <form action="payform.html" method="post">
         <label for="card_number">Card Number</label>
         <input type="text" id="card_number" name="card_number" required>
-      
-<div id="phonepe-button-container"></div>
-
         <button type="submit">Pay Now</button>
     </form>
-    
- 
-    <script src="https://js.stripe.com/v3/"></script>
+     <script src="https://js.stripe.com/v3/"></script>
     <script>
        
         var stripe = Stripe('your_stripe_public_key');
         var elements = stripe.elements();
         var card = elements.create('card');
         card.mount('#card-element ');
-    </script>
-    <script>
-        var phonePe = new PhonePeCheckout({
-  clientId: 'YOUR_PHONEPE_CLIENT_ID',
-  orderId: 'YOUR_ORDER_ID',
-  amount: '1000', 
-  orderCurrency: 'INR',
-  returnUrl: 'URL_TO_RETURN_AFTER_PAYMENT',
-  paymentModes: ['UPI', 'WALLET', 'CC', 'DC', 'NET_BANKING'],
-  orderDescription: 'Description of your order'
-});
-        phonePe.initiatePayment();
-    </script>
-    
+    </script> 
 </body>
 </html>
