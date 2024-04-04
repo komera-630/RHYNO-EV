@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="CODE3.CSS">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+  
+</head>
+<body>
+    <h1>Our Products</h1>
+
+
+  <section class="product">
+   
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="card">
+          <select class="form-control color-option">
+            <option value="default">Select Color</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="black">black</option>
+          </select>
+          <img src="rhyno final.3.png" class="card-img-top" alt="Product 1">
+          <div class="card-body">
+            <h5 class="card-title">SE03 Lite</h5>
+            <p class="card-text">Details about SE03 lite...</p>
+            <a href="PRODUCT1.HTML" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card">
+          <select class="form-control color-option">
+            <option value="default">Select Color</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="black">black</option>
+          </select>
+          <img src="rhyno final.3.png" class="card-img-top" alt="Product 2">
+          <div class="card-body">
+            <h5 class="card-title">SE03</h5>
+            <p class="card-text">Details about SE03...</p>
+           
+            <a href="PRODUCT2.HTML" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card">
+          <select class="form-control color-option">
+            <option value="default">Select Color</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="black">black</option>
+          </select>
+
+          
+          
+          <img src="rhyno final.3.png" class="card-img-top" alt="Product 3">
+          <h5 class="card-title">SE03 Max</h5>
+          <div class="card-body">
+            <p class="card-text">Details about SE03 max...</p>
+            <a href="PRODUCT3.HTML" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-3">
+            <div class="card">
+        <div class="card-body">
+          
+          <img src="rhyno final.3.png" class="card-img-top" alt="Product 2">
+          <h5 class="card-title">compare all</h5>
+          <p class="card-text">All products details...</p>
+          <a href="compareall.html" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+   </div>
+    </div>
+
+  </section>
+</div>
+  <footer id="foot">
+    <p id="h1">&copy; 2024 Your Company</p>
+  </footer>
+  <script>
+    $(document).ready(function() {
+      $('.color-option').change(function() {
+        var selectedColor = $(this).val();
+        var card = $(this).closest('.card');
+        var productImage = card.find('.card-img-top');
+        if (selectedColor === 'blue') {
+          productImage.attr('src', 'image-blue.png');
+        } else if (selectedColor === 'red') {
+          productImage.attr('src', 'image-red.png');
+        } else {
+          productImage.attr('src', 'image-black.png');
+        }
+      });
+    });
+    </script>
+   
+</body>
+</html>
